@@ -1,0 +1,1 @@
+docker-compose --file dc-test.yml up
