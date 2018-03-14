@@ -16,7 +16,9 @@ services:
       MYSQL_ROOT_PASSWORD: somepassword
 
   nginx-proxy:
-    image: jwilder/nginx-proxy
+    #image: jwilder/nginx-proxy
+    #image: tamboraorg/creproxy
+    image: tamboraorg/cretest
     ports:
       - "80:80"
       - "443:443"
@@ -31,4 +33,4 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     volumes_from:
-- "nginx-proxy"
+      - "nginx-proxy"
