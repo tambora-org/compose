@@ -1,0 +1,24 @@
+version: '2'
+services:
+  cre-proxy:
+    image: tamboraorg/creproxy
+    container_name: creproxy
+    environment:
+      ADMIN_EMAIL: admin@example.com
+      CRE_DOMAIN: example.com
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - "./certs:/etc/letsencrypt/live"
+    links:
+      - jenkins2
+
+  cre-jenkins:
+    image: tamboraorg/crejenkins
+    container_name: crejenkins
+    environment:
+      CRE_SUBDOMAIN: ci
+
+  
