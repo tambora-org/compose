@@ -25,7 +25,7 @@ services:
 #        - ./nginx2/site.conf:/etc/nginx/conf.d/site.conf
         - ./volumes/php-nginx.conf:/etc/nginx/conf.d/default.conf
     links:
-        - php2
+        - cre-php
 
   cre-php:
     image: tamboraorg/crephp
