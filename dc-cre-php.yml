@@ -14,23 +14,14 @@ services:
       - "./certs:/etc/letsencrypt/live"
 
   cre-nginx:
-    image: tamboraorg/crenginx
-    container_name: crenginx
+    image: tamboraorg/crephp
+    container_name: crephp
     environment:
       CRE_SUBDOMAIN: www
     volumes:
         - ./volumes/www:/cre/www
 #        - ./nginx2/site.conf:/etc/nginx/conf.d/site.conf
 #        - ./volumes/php-nginx.conf:/etc/nginx/conf.d/default.conf
-    links:
-        - cre-php
-
-  cre-php:
-    image: tamboraorg/crephp
-    container_name: crephp
-    volumes:
-      - ./volumes/www:/cre/www
-#      - ./volumes/php-ini-overrides.ini:/etc/php/7.0/fpm/conf.d/99-overrides.ini
 #  links:
 #    - memcached2
 #    - postgres2
