@@ -11,9 +11,9 @@ services:
       - "443:443"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - "./certs:/etc/letsencrypt/live"
+#      - "./certs:/etc/letsencrypt"
     links:
-      - jenkins2
+      - cre-jenkins
 
   cre-jenkins:
     image: tamboraorg/crejenkins
