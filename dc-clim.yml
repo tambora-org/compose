@@ -1,7 +1,7 @@
 version: '2'
 services:
   cre-proxy:
-    image: tamboraorg/creproxy
+    image: tamboraorg/creproxy:latest
     container_name: creproxy
     environment:
       ADMIN_EMAIL: admin@example.com
@@ -14,7 +14,7 @@ services:
       - "./certs:/etc/letsencrypt"
 
   cre-nginx-php:
-    image: tamboraorg/crenginxphp
+    image: tamboraorg/crenginxphp:latest
     container_name: crenginxphp
     environment: 
       CRE_SUBDOMAIN: dev
@@ -24,7 +24,7 @@ services:
      - cre-php
 
   cre-php:
-    image: tamboraorg/crephp
+    image: tamboraorg/crephp:latest
     container_name: crephp
     environment:
       CRE_PHP_ROOT: www/sub
@@ -37,7 +37,7 @@ services:
 #    - elasticsearch2
 
   cre-mysql:
-    image: tamboraorg/cremysql
+    image: tamboraorg/cremysql:latest
     container_name: cremysql
     environment:
       MYSQL_ROOT_PWD: secret
@@ -45,14 +45,14 @@ services:
       MYSQL_USER_PWD: secret
       MYSQL_USER_DB:  cre  
       CRE_SUBDOMAIN:  db2
-#      CRE_PORT:       3306 
+      CRE_PORT:       3306 
     ports:
       - "3306:3306"
     volumes:
       - ./volumes/mysql:/var/lib/mysql
 
   cre-postgres:
-    image: tamboraorg/crepostgis
+    image: tamboraorg/crepostgis:latest
     container_name: crepostgres
     volumes:
       - ./volumes/postgres/data:/var/lib/postgresql/data
@@ -64,13 +64,13 @@ services:
       POSTGRES_DB:       cre
 
   cre-nextcloud:
-    image: tamboraorg/crenextcloud
+    image: tamboraorg/crenextcloud:latest
     container_name: crenextcloud
     environment: 
       CRE_SUBDOMAIN: box
       CRE_PORT: 9000
     links:
-        - cre-lpostgres
+        - cre-postgres
     volumes:
         - ./nextcloud/apps:/var/www/html/apps
         - ./nextcloud/config:/var/www/html/config
