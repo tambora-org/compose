@@ -57,6 +57,8 @@ services:
     volumes:
       - ./volumes/postgres/data:/var/lib/postgresql/data
     environment:
+      CRE_SUBDOMAIN:     db
+      CRE_PORT:          5432
       POSTGRES_USER:     cre
       POSTGRES_PASSWORD: secret
       POSTGRES_DB:       cre
@@ -66,8 +68,9 @@ services:
     container_name: crenextcloud
     environment: 
       CRE_SUBDOMAIN: box
+      CRE_PORT: 9000
     links:
-        - crepostgres
+        - cre-lpostgres
     volumes:
         - ./nextcloud/apps:/var/www/html/apps
         - ./nextcloud/config:/var/www/html/config
