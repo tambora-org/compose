@@ -1,0 +1,66 @@
+version: '2'
+services:
+
+  cre-glue:
+    image: tamboraorg/creglue:2011.0
+    container_name: creglue
+    volumes:
+     - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  cre-proxy:
+    image: tamboraorg/creproxy:2011.0
+    container_name: creproxy
+    environment:
+      ADMIN_EMAIL: michael.kahle@yahoo.de
+      CRE_DOMAIN: example.com
+      CRE_DEVELOPMENT: dev 
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./certs:/etc/letsencrypt"
+    volumes_from:
+      - cre-glue
+
+  cre-nginx-php:
+   image: tamboraorg/crenginxphp:2011.0
+   container_name: crenginxphp
+   environment: 
+     CRE_SUBDOMAIN: www
+     CRE_PHP_ROOT: www/yii/web
+     POSTGRES_DB: tambora
+     POSTGRES_USER: testuser
+     POSTGRES_PWD: secret
+     SQLITE_DB: light
+   volumes:
+    - ./volumes/www:/cre/www
+   volumes_from:
+    - cre-glue
+
+  cre-php:
+   image: tamboraorg/crephpyii:2011.0
+   container_name: creyii
+   environment:
+     CRE_NGINX: crenginxphp
+   volumes_from:
+    - cre-glue
+    - cre-nginx-php
+
+  cre-postgis:
+    image: tamboraorg/crepostgis:2011.0
+    container_name: crepostgis
+    environment:
+      POSTGRES_ROOT_PWD: secret
+      CRE_SUBDOMAIN:  db
+      CRE_PORT:       5432 
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./volumes/postgres/dumps/tambora:/cre/postgres/dumps/tambora
+    volumes_from:
+      - cre-glue
+  
+
+# docker system prune -f
+# docker-compose  --file dc-tmb.yml up -d
+
