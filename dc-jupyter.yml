@@ -1,0 +1,58 @@
+version: '2'
+services:
+
+  cre-glue:
+    image: tamboraorg/creglue:0.2020
+    container_name: creglue
+    volumes:
+     - /var/run/docker.sock:/tmp/docker.sock:ro
+     - ./secrets:/cre/secrets
+
+  cre-proxy:
+    image: tamboraorg/creproxy:0.2020
+    container_name: creproxy
+    environment:
+      ADMIN_EMAIL: michael.kahle@yahoo.de
+      CRE_DOMAIN: localhost
+      CRE_DEVELOPMENT: 1
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./volumes/certs:/etc/letsencrypt"
+    volumes_from:
+      - cre-glue
+
+  cre-jupyter:
+   image: tamboraorg/crejupyter:latest
+   container_name: crejupyter
+   environment: 
+     CRE_SUBDOMAIN: www
+     CRE_PORT: 8000
+#     CRE_PHP_ROOT: www/yii/public
+     POSTGRES_DB: jupyter
+     POSTGRES_USER: jupyter
+     POSTGRES_PWD: geheim2
+   volumes:
+    - "./volumes/jupyter:/cre/jupyter"
+   volumes_from:
+    - cre-glue
+   ports:
+    - "8000:8000"
+    - "8081:8081"
+
+  cre-postgis:
+    image: tamboraorg/crepostgis:0.2020
+    container_name: crepostgis
+    environment:
+      POSTGRES_ROOT_PWD: geheim
+      CRE_SUBDOMAIN:  db
+      CRE_PORT:       5432 
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./volumes/postgres/dumps/tambora:/cre/postgres/dumps/tambora 
+    volumes_from:
+      - cre-glue
+ 
+# docker-compose  --file dc-jupyter.yml up -d
