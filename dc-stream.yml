@@ -1,0 +1,57 @@
+version: '2'
+services:
+
+  cre-glue:
+    image: tamboraorg/creglue:2020.0
+    container_name: creglue
+    volumes:
+     - /var/run/docker.sock:/tmp/docker.sock:ro
+     - ./secrets:/cre/secrets
+
+  cre-proxy:
+    image: tamboraorg/creproxy:2020.0
+    container_name: creproxy
+    environment:
+      ADMIN_EMAIL: michael.kahle@yahoo.de
+      CRE_DOMAIN: localhost
+      CRE_DEVELOPMENT: 1
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./volumes/certs:/etc/letsencrypt"
+    volumes_from:
+      - cre-glue
+
+  cre-rabbit:
+   image: tamboraorg/crerabbitmq:latest
+   container_name: crerabbit
+   environment: 
+     CRE_SUBDOMAIN: mq
+     CRE_PORT: 15672
+     RABBITMQ_ROOT_PWD: secret
+
+#     CRE_PHP_ROOT: www/yii/public
+   volumes_from:
+    - cre-glue
+   ports:
+    - "15672:15672"
+    - "5672:5672"
+
+  cre-image:
+    image: tamboraorg/creimage:latest
+    container_name: creimage
+    environment:
+      RABBITMQ_QUEUE: test
+      RABBITMQ_USER: testuser
+      RABBITMQ_PWD: secret
+      TESSERACT_LANGUAGES: deu,script-frak
+#      ?? queue ??
+#    volumes:
+#      - ./volumes/postgres/dumps/tambora:/cre/postgres/dumps/tambora 
+    volumes_from:
+      - cre-glue
+#     - cre-rabbit  # for file-share ??
+ 
+# sudo  docker system prune -f
+# sudo  docker-compose --file dc-stream.yml up -d
