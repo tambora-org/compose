@@ -2,14 +2,14 @@ version: '2'
 services:
 
   cre-glue:
-    image: tamboraorg/creglue:0.2020
+    image: tamboraorg/creglue:2020.0
     container_name: creglue
     volumes:
      - /var/run/docker.sock:/tmp/docker.sock:ro
      - ./secrets:/cre/secrets
 
   cre-proxy:
-    image: tamboraorg/creproxy:0.2020
+    image: tamboraorg/creproxy:2020.0
     container_name: creproxy
     environment:
       ADMIN_EMAIL: michael.kahle@yahoo.de
@@ -30,6 +30,8 @@ services:
      CRE_SUBDOMAIN: www
      CRE_PORT: 8000
 #     CRE_PHP_ROOT: www/yii/public
+     JUPYTER_ADMIN: admin
+     JUPYTER_PASSWORD: geheim1
      POSTGRES_DB: jupyter
      POSTGRES_USER: jupyter
      POSTGRES_PWD: geheim2
@@ -42,7 +44,7 @@ services:
     - "8081:8081"
 
   cre-postgis:
-    image: tamboraorg/crepostgis:0.2020
+    image: tamboraorg/crepostgis:2020.0
     container_name: crepostgis
     environment:
       POSTGRES_ROOT_PWD: geheim

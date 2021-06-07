@@ -1,0 +1,97 @@
+version: "3.6"
+volumes:
+  shared-workspace:
+    name: "hadoop-distributed-file-system"
+    driver: local
+services:
+
+  cre-glue:
+    image: tamboraorg/creglue:2020.0
+    container_name: creglue
+    volumes:
+     - /var/run/docker.sock:/tmp/docker.sock:ro
+     - ./secrets:/cre/secrets
+
+  cre-proxy:
+    image: tamboraorg/creproxy:2020.0
+    container_name: creproxy
+    environment:
+      ADMIN_EMAIL: michael.kahle@yahoo.de
+      CRE_DOMAIN: localhost
+      CRE_DEVELOPMENT: 1
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./volumes/certs:/etc/letsencrypt"
+    volumes_from:
+      - cre-glue
+
+  jupyterlab:
+    image: tamboraorg/crejupyter:latest
+    container_name: crejupyter
+    environment:
+      - CRE_SUBDOMAIN=www
+      - CRE_PORT=8000
+      - JUPYTER_ADMIN=admin
+      - JUPYTER_PASSWORD=geheim1
+      - POSTGRES_DB=jupyter
+      - POSTGRES_USER=jupyter
+      - POSTGRES_PWD=geheim2
+    ports:
+      - "8000:8000"
+      - "8081:8081"
+    volumes:
+      - shared-workspace:/opt/workspace
+    volumes_from:
+      - cre-glue
+
+  spark-master:
+    image: tamboraorg/crespark:latest
+    container_name: cresparkmaster
+    environment:
+      - CRE_SUBDOMAIN=sm0
+      - CRE_PORT=8080
+    ports:
+      - 8080:8080
+      - 7077:7077
+    volumes:
+      - shared-workspace:/opt/workspace
+    volumes_from:
+      - cre-glue
+
+  spark-worker-1:
+    image: tamboraorg/crespark:latest
+    container_name: cresparkworker1
+    environment:
+      - CRE_SUBDOMAIN=sw1
+      - CRE_PORT=8081
+      - SPARK_MASTER=cresparkmaster
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=512m
+    ports:
+      - 8082:8081
+    volumes:
+      - shared-workspace:/opt/workspace
+    volumes_from:
+     - cre-glue
+    depends_on:
+      - spark-master
+
+  spark-worker-2:
+    image: tamboraorg/crespark:latest
+    container_name: cresparkworker2
+    environment:
+      - CRE_SUBDOMAIN=sw2
+      - CRE_PORT=8081
+      - SPARK_MASTER=cresparkmaster
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=512m
+    ports:
+      - 8083:8081
+    volumes:
+      - shared-workspace:/opt/workspace
+    volumes_from:
+     - cre-glue
+    depends_on:
+      - spark-master

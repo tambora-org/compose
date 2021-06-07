@@ -12,7 +12,7 @@ services:
     container_name: creproxy
     environment:
       ADMIN_EMAIL: michael.kahle@yahoo.de
-      CRE_DOMAIN: example.com
+      CRE_DOMAIN: localhost
       CRE_DEVELOPMENT: dev 
     ports:
       - "80:80"
