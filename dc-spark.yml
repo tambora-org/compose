@@ -42,7 +42,8 @@ services:
       - "8000:8000"
       - "8081:8081"
     volumes:
-      - shared-workspace:/opt/workspace
+#      - shared-workspace:/opt/workspace
+      - ./volumes/jupyter:/cre/jupyter
     volumes_from:
       - cre-glue
 
@@ -56,7 +57,9 @@ services:
       - 8080:8080
       - 7077:7077
     volumes:
-      - shared-workspace:/opt/workspace
+#      - shared-workspace:/opt/workspace
+#      - ./volumes/jupyter:/cre/jupyter
+      - ./volumes/jupyter:/opt/workspace
     volumes_from:
       - cre-glue
 
@@ -72,7 +75,9 @@ services:
     ports:
       - 8082:8081
     volumes:
-      - shared-workspace:/opt/workspace
+#      - shared-workspace:/opt/workspace
+#      - ./volumes/jupyter:/cre/jupyter
+      - ./volumes/jupyter:/opt/workspace
     volumes_from:
      - cre-glue
     depends_on:
@@ -90,8 +95,13 @@ services:
     ports:
       - 8083:8081
     volumes:
-      - shared-workspace:/opt/workspace
+#      - shared-workspace:/opt/workspace
+#      - ./volumes/jupyter:/cre/jupyter
+      - ./volumes/jupyter:/opt/workspace
     volumes_from:
      - cre-glue
     depends_on:
       - spark-master
+
+
+#sudo /home/kmicha/anaconda3/bin/docker-compose  --file dc-spark.yml up -d
