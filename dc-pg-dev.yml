@@ -1,0 +1,24 @@
+version: '2'
+services:
+ 
+  cre-glue:
+    image: tamboraorg/creglue:2020.0
+    container_name: creglue
+    volumes:
+     - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  cre-postgis:
+    image: tamboraorg/crepostgresdev:latest
+    container_name: crepgdev
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./volumes/postgres/extensions/fuzzy-new:/cre/postgresql-src/contrib/extension
+    volumes_from:
+      - cre-glue
+  
+
+# docker system prune -f
+# docker-compose  --file dc-pg-dev.yml up -d
+#sudo /home/kmicha/anaconda3/bin/docker-compose  --file dc-pg-dev.yml up -d
+
