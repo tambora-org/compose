@@ -1,0 +1,18 @@
+import sys
+sys.path
+sys.path.append("./.local/lib/python3.8/site-packages")
+---
+!pip install wget
+---
+import wget
+
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+wget.download(url)
+---
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.getOrCreate()
+---
+data = spark.read.csv("iris.data")
+data.show(n=5)
+---
+

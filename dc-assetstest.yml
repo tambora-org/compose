@@ -1,0 +1,14 @@
+version: '2'
+services:
+  assets:
+    image: credocker/creassets:2020.0
+    container_name: creassets
+
+
+  glue:
+    image: credocker/creglue
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+# sudo  docker system prune -f
+# sudo docker-compose  --file dc-assetstest.yml up -d

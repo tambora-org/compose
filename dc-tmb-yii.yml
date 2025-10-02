@@ -2,13 +2,13 @@ version: '2'
 services:
  
   cre-glue:
-    image: tamboraorg/creglue:tmb.16n
+    image: tamboraorg/creglue:2011.0
     container_name: creglue
     volumes:
      - /var/run/docker.sock:/tmp/docker.sock:ro
 
   cre-proxy:
-    image: tamboraorg/creproxy:tmb.16n
+    image: tamboraorg/creproxy:2011.0
     container_name: creproxy
     environment:
       ADMIN_EMAIL: michael.kahle@yahoo.de
@@ -23,10 +23,10 @@ services:
       - cre-glue
 
   cre-nginx-php:
-   image: tamboraorg/crenginxphp:tmb.16n
+   image: tamboraorg/crenginxphp:2011.0
    container_name: crenginxphp
    environment: 
-     CRE_SUBDOMAIN: www,
+     CRE_SUBDOMAIN: www
      CRE_PHP_ROOT: www/yii/web
      POSTGRES_DB: tambora
      POSTGRES_USER: testuser
@@ -38,8 +38,8 @@ services:
     - cre-glue
 
   cre-php:
-   image: tamboraorg/crephp:tmb.16n
-   container_name: crephp
+   image: tamboraorg/crephpyii:latest
+   container_name: creyii
    environment:
      CRE_NGINX: crenginxphp
    volumes_from:
@@ -47,7 +47,7 @@ services:
     - cre-nginx-php
 
   cre-postgis:
-    image: tamboraorg/crepostgis:tmb.16n
+    image: tamboraorg/crepostgis:latest
     container_name: crepostgis
     environment:
       POSTGRES_ROOT_PWD: secret

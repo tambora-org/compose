@@ -1,0 +1,25 @@
+version: '2'
+services:
+ 
+  cre-glue:
+    image: credocker/creglue:2022.0
+    container_name: creglue
+    volumes:
+     - /var/run/docker.sock:/tmp/docker.sock:ro
+     - ./secrets:/cre/secrets  
+
+  cre-php:
+   image: credocker/creubuntu:2022.0
+   container_name: creubuntu
+   environment:
+     SECRET_MAIL_HUB: MAIL_HUB.txt
+     SECRET_MAIL_USER: MAIL_USER.txt
+     SECRET_MAIL_PWD: MAIL_PWD.txt   
+   volumes_from:
+    - cre-glue
+
+  
+
+# docker system prune -f
+# /etc/init.d/apache2 stop
+#  sudo /home/kmicha/anaconda3/bin/docker-compose  --file dc-mailtest.yml up -d

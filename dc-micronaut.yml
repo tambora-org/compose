@@ -2,14 +2,14 @@ version: '2'
 services:
 
   cre-glue:
-    image: tamboraorg/creglue:2020.0
+    image: credocker/creglue:2020.0
     container_name: creglue
     volumes:
      - /var/run/docker.sock:/tmp/docker.sock:ro
      - ./secrets:/cre/secrets
 
   cre-proxy:
-    image: tamboraorg/creproxy:2020.0
+    image: credocker/creproxy:2020.0
     container_name: creproxy
     environment:
       ADMIN_EMAIL: michael.kahle@yahoo.de
@@ -23,28 +23,26 @@ services:
     volumes_from:
       - cre-glue
 
-  cre-jupyter:
-   image: tamboraorg/crejupyter:latest
-   container_name: crejupyter
+  cre-micronaut:
+   image: credocker/cremicronaut:2020.0
+   container_name: cremicronaut
    environment: 
      CRE_SUBDOMAIN: www
-     CRE_PORT: 8000
+#     CRE_PORT: 8000
 #     CRE_PHP_ROOT: www/yii/public
-     JUPYTER_ADMIN: admin
-     JUPYTER_PASSWORD: geheim1
-     POSTGRES_DB: jupyter
-     POSTGRES_USER: jupyter
+     POSTGRES_DB: tambora
+     POSTGRES_USER: tambora
      POSTGRES_PWD: geheim2
+     DB_MIGRATION: flyway
    volumes:
-    - "./volumes/jupyter:/cre/workspace/jupyter"
+    - "./volumes/micronaut:/cre/mn-app"
    volumes_from:
     - cre-glue
    ports:
-    - "8000:8000"
-    - "8081:8081"
+    - "8080:8080"
 
   cre-postgis:
-    image: tamboraorg/crepostgis:2020.0
+    image: credocker/crepostgis:2018.0
     container_name: crepostgis
     environment:
       POSTGRES_ROOT_PWD: geheim
@@ -54,7 +52,14 @@ services:
       - "5432:5432"
     volumes:
       - ./volumes/postgres/dumps/tambora:/cre/postgres/dumps/tambora 
+      - ./volumes/postgres/data:/var/lib/postgresql  
     volumes_from:
       - cre-glue
  
-# docker-compose  --file dc-jupyter.yml up -d
+# sudo  docker system prune -f
+# /etc/init.d/apache2 stop
+# sudo /home/kmicha/anaconda3/bin/docker-compose  --file dc-micronaut.yml up -d
+# sudo docker-compose  --file dc-micronaut.yml up -d
+# https://www.localhost/hello
+# sudo chmod -R 777 volumes/micronaut/mn-init
+# sudo docker exec cremicronaut /cre/mn-run.sh
