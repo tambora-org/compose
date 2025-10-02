@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: cre.micronaut
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: maven
+features: [annotation-api, app-name, data, data-jdbc, email-javamail, email-template, flyway, http-client, jdbc-hikari, junit, kotlin, kotlin-application, kotlin-extension-functions, logback, management, maven, netty-server, postgres, readme, rss, serialization-jsonp, shade, test-resources, vertx-pg-client, views-thymeleaf, yaml]

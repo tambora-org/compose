@@ -1,0 +1,41 @@
+micronaut:
+  application:
+    name: app
+    comment: mn-config.py was adapted!
+datasources:
+  default:
+    driver-class-name: org.postgresql.Driver
+    db-type: postgresql
+    dialect: POSTGRES
+    url: jdbc:postgresql://172.19.0.4:5432/tambora
+    driverClassName: org.postgresql.Driver
+    username: tambora
+    password: geheim2
+netty:
+  default:
+    allocator:
+      max-order: 3
+vertx:
+  pg:
+    client:
+      port: '5432'
+      host: 172.19.0.4
+      database: tambora
+      user: tambora
+      password: geheim2
+      maxSize: 5
+flyway:
+  datasources:
+    default:
+      enabled: true
+      baseline-on-migrate: 'True'
+      baseline-version: 0
+jpa:
+  default:
+    properties:
+      hibernate:
+        bytecode:
+          provider: None
+        hbm2ddl:
+          auto: validate
+        show_sql: 'False'

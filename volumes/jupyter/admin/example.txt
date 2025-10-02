@@ -1,0 +1,7 @@
+You’ll learn all the details of this program soon, but take a good look. The program counts the total number of lines and the number of lines that have the word python in a file named copyright.
+
+Remember, a PySpark program isn’t that much different from a regular Python program, but the execution model can be very different from a regular Python program, especially if you’re running on a cluster.
+
+There can be a lot of things happening behind the scenes that distribute the processing across multiple nodes if you’re on a cluster. However, for now, think of the program as a Python program that uses the PySpark library.
+
+Now that you’ve seen some common functional concepts that exist in Python as well as a simple PySpark program, it’s time to dive deeper into Spark and PySpark.

@@ -1,0 +1,12 @@
+{
+  "base_url": "/user/admin/",
+  "hostname": "127.0.0.1",
+  "notebook_dir": "/cre/workspace/jupyter/admin",
+  "password": false,
+  "pid": 180,
+  "port": 37477,
+  "secure": false,
+  "sock": "",
+  "token": "",
+  "url": "http://127.0.0.1:37477/user/admin/"
+}
