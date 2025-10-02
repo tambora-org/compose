@@ -1,6 +1,9 @@
 #
+/certs
 /secrets
 /volumes/certs
-/volumes/postgres
+/volumes/postgres/*
+!/volumes/postgres/extensions/
+/volumes/spring
 
 
