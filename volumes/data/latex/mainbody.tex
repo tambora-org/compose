@@ -1,0 +1,69 @@
+%%%PREAMBEL
+\input{preambel.tex}
+
+%%%TITLE
+\input{title.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%BODY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%% GENERATE TITLE
+\maketitle
+
+%%%CITATION STYLE
+\newpage
+\input{citation.tex}
+
+%%%FOOTER
+\input{footer.tex}
+
+%%%TABLE OF CONTENTS
+\newpage
+\tableofcontents
+
+%%%EDITOR NOTES
+\newpage
+\setcounter{page}{1}
+%%%HEADER
+\ihead{Glaser, Kahle \& Hologa (\ExecuteMetaData[variables.tex]{year}): The tambora.org data series edition}
+\ohead{\pagemark}
+\input{editornotes.tex}
+
+%%%MATERIAL SPECIFICATION
+\newpage
+%%%HEADER
+\ihead{\ExecuteMetaData[variables.tex]{authorsheader} (\ExecuteMetaData[variables.tex]{year}): \ExecuteMetaData[variables.tex]{shorttitle}}
+\ohead{\pagemark}
+\input{materialspecification.tex}
+
+%%%DATA SET PROFILE
+\newpage
+%%%HEADER
+\ihead{Data Set Profile}
+\ohead{\pagemark}
+\input{datasetprofile.tex}
+
+%%%DATA
+\newpage
+%%%HEADER
+\ihead{Data}
+\ohead{\pagemark}
+\input{data.tex}
+
+%%%LIST OF PLACES
+%%%\newpage
+%%%HEADER
+%%%\ihead{List of Places}
+%%%\ohead{\pagemark}
+%%%\input{listofplaces.tex}
+
+%%%LIST OF CODES
+%%%\newpage
+%%%HEADER
+%%%\ihead{List of Codes}
+%%%\ohead{\pagemark}
+%%%\input{listofcodes.tex}
+
+\end{document}

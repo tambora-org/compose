@@ -1,0 +1,641 @@
+{
+    "tech": {
+        "upload_type": "1"
+    },
+    "blockmetadata": {
+        "partof": [
+            {
+                "source_title": "Tambora.org - Die Kollaborative Forschungsumgebung für historische Klimatologie",
+                "source_id": {
+                    "attribute_id": "doi",
+                    "value": "10.6094/tambora.org"
+                },
+                "pubyear": "2015"
+            }
+        ],
+        "relation_external": [],
+        "relation": [
+            {
+                "relation_type": {
+                    "attribute_id": "is_part_of"
+                },
+                "relation_target": {
+                    "attribute_id": "doi",
+                    "value": "10.6094/tambora.org"
+                }
+            }
+        ],
+        "person": [
+            {
+                "person": {
+                    "attribute_id": "author"
+                },
+                "person_blockid": 56,
+                "variations": {
+                    "blockid": 56,
+                    "name": "Michael Kahle"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "hrsg"
+                },
+                "person_blockid": 16,
+                "variations": {
+                    "blockid": 16,
+                    "name": "Rüdiger Glaser"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "hrsg"
+                },
+                "person_blockid": 59,
+                "variations": {
+                    "blockid": 59,
+                    "name": "Michael Kahle"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "hrsg"
+                },
+                "person_blockid": 197,
+                "variations": {
+                    "blockid": 197,
+                    "name": "Rafael Hologa"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "data_manager"
+                },
+                "person_blockid": 109,
+                "variations": {
+                    "blockid": 109,
+                    "name": "micha05 kahle05"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 197,
+                "variations": {
+                    "blockid": 197,
+                    "name": "Rafael Hologa"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 386,
+                "variations": {
+                    "blockid": 386,
+                    "name": "Hannah Robinson"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 383,
+                "variations": {
+                    "blockid": 383,
+                    "name": "Patrick Peura"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 388,
+                "variations": {
+                    "blockid": 388,
+                    "name": " "
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 390,
+                "variations": {
+                    "blockid": 390,
+                    "name": "Sabine Schneider"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 530,
+                "variations": {
+                    "blockid": 530,
+                    "name": "Stefano Cunietti"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 531,
+                "variations": {
+                    "blockid": 531,
+                    "name": "Laura Richter"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 535,
+                "variations": {
+                    "blockid": 535,
+                    "name": "Miriam Eder"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 537,
+                "variations": {
+                    "blockid": 537,
+                    "name": "Nico Börschig"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 538,
+                "variations": {
+                    "blockid": 538,
+                    "name": "Zimmer Henrike"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 539,
+                "variations": {
+                    "blockid": 539,
+                    "name": "Thea Uhlich"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 540,
+                "variations": {
+                    "blockid": 540,
+                    "name": "Zimmer Henrike"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 546,
+                "variations": {
+                    "blockid": 546,
+                    "name": "Alina Grebe "
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 547,
+                "variations": {
+                    "blockid": 547,
+                    "name": " "
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 548,
+                "variations": {
+                    "blockid": 548,
+                    "name": "Berg Daniel"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 558,
+                "variations": {
+                    "blockid": 558,
+                    "name": "Coline Chardon"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 551,
+                "variations": {
+                    "blockid": 551,
+                    "name": " "
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 552,
+                "variations": {
+                    "blockid": 552,
+                    "name": "Dorothee Ibens"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 556,
+                "variations": {
+                    "blockid": 556,
+                    "name": " "
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 560,
+                "variations": {
+                    "blockid": 560,
+                    "name": "Christina Jäger"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 564,
+                "variations": {
+                    "blockid": 564,
+                    "name": "Laura Gumbert"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 559,
+                "variations": {
+                    "blockid": 559,
+                    "name": " "
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 572,
+                "variations": {
+                    "blockid": 572,
+                    "name": "Katharina Lieser"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 573,
+                "variations": {
+                    "blockid": 573,
+                    "name": "Carla van der Meyden"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 542,
+                "variations": {
+                    "blockid": 542,
+                    "name": "Catarina "
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 575,
+                "variations": {
+                    "blockid": 575,
+                    "name": "Timo Schaffitzel"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 576,
+                "variations": {
+                    "blockid": 576,
+                    "name": "Fabian Schwaderer"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 569,
+                "variations": {
+                    "blockid": 569,
+                    "name": "Florian  Weiß"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 580,
+                "variations": {
+                    "blockid": 580,
+                    "name": " "
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 582,
+                "variations": {
+                    "blockid": 582,
+                    "name": " Heinemann"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 583,
+                "variations": {
+                    "blockid": 583,
+                    "name": "Luis Haber"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 586,
+                "variations": {
+                    "blockid": 586,
+                    "name": " Joos"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 585,
+                "variations": {
+                    "blockid": 585,
+                    "name": "Konstantin Scheffczyk"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 587,
+                "variations": {
+                    "blockid": 587,
+                    "name": "Anne Bruder"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 590,
+                "variations": {
+                    "blockid": 590,
+                    "name": " Schimmer"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 574,
+                "variations": {
+                    "blockid": 574,
+                    "name": " Sara Faßbender"
+                }
+            },
+            {
+                "person": {
+                    "attribute_id": "researcher"
+                },
+                "person_blockid": 592,
+                "variations": {
+                    "blockid": 592,
+                    "name": "Julian Haagen"
+                }
+            }
+        ]
+    },
+    "metadata": {
+        "state": [
+            {
+                "attribute_id": "available",
+                "value": "not_checked"
+            }
+        ],
+        "title": [
+            {
+                "attribute_id": "eng",
+                "value": "Collection of Rafael"
+            },
+            {
+                "attribute_id": "ger",
+                "value": "Collection of Rafael"
+            }
+        ],
+        "publication_year": [
+            {
+                "attribute_id": "",
+                "value": "2024"
+            }
+        ],
+        "language": [
+            {
+                "attribute_id": "eng",
+                "text": "english"
+            }
+        ],
+        "admin": [
+            {
+                "attribute_id": "email",
+                "value": "michael.kahle@mail.ub.uni-freiburg.de"
+            },
+            {
+                "attribute_id": "name",
+                "value": "Michael Kahle"
+            }
+        ],
+        "doctype": [
+            {
+                "attribute_id": "research_data"
+            }
+        ],
+        "doc_id": [
+            {
+                "attribute_id": "doi",
+                "value": null
+            }
+        ],
+        "description": [
+            {
+                "attribute_id": "other_description",
+                "value": "Collection of Rafael",
+                "text": "Collection of Rafael"
+            }
+        ],
+        "abstract": [
+            {
+                "attribute_id": "eng",
+                "text": "Collection of Rafael",
+                "value": "Collection of Rafael"
+            },
+            {
+                "attribute_id": "ger",
+                "text": "Collection of Rafael",
+                "value": "Collection of Rafael"
+            }
+        ],
+        "keyword": [
+            {
+                "attribute_id": "k_gnd",
+                "mode_string": "s",
+                "text": "Klimatologie",
+                "value": "4031178-8"
+            },
+            {
+                "attribute_id": "k_gnd",
+                "mode_string": "s",
+                "text": "Klima",
+                "value": "4031170-3"
+            },
+            {
+                "attribute_id": "k_gnd",
+                "mode_string": "s",
+                "text": "Historische Klimatologie",
+                "value": "4225827-3"
+            },
+            {
+                "attribute_id": "k_gnd",
+                "mode_string": "s",
+                "text": "Physische Geografie",
+                "value": "4174629-6"
+            },
+            {
+                "attribute_id": "k_gnd",
+                "mode_string": "s",
+                "text": "Wetter",
+                "value": "4065852-1"
+            },
+            {
+                "attribute_id": "k_gnd",
+                "mode_string": "s",
+                "text": "Meteorologie",
+                "value": "4038953-4"
+            }
+        ],
+        "classification": [
+            {
+                "attribute_id": "gbv",
+                "text": "38.82 Klimatologie",
+                "value": "38.82"
+            },
+            {
+                "attribute_id": "gbv",
+                "text": "38.09 Physische Geographie",
+                "value": "38.09"
+            },
+            {
+                "attribute_id": "gbv",
+                "text": "38.80 Meteorologie",
+                "value": "38.80"
+            }
+        ],
+        "corporate": [
+            {
+                "attribute_id": "contributor",
+                "value": "2452",
+                "text": "Institut für Umweltsozialwissenschaften und Geographie"
+            },
+            {
+                "attribute_id": "datamanager",
+                "value": "2212",
+                "text": "Universitätsbibliothek Freiburg"
+            }
+        ],
+        "researchdata_description": [
+            {
+                "attribute_id": "contents",
+                "value": "Data for Sources, Quotes & Events from www.tambora.org"
+            },
+            {
+                "attribute_id": "technical",
+                "value": "Zip-File with CSV-Files includes"
+            }
+        ],
+        "message": [
+            {
+                "attribute_id": "user",
+                "value": "Tambora-Datensatz"
+            },
+            {
+                "attribute_id": "system",
+                "value": "Tambora-Datensatz"
+            }
+        ],
+        "corporate_exam": [],
+        "date_exam": [
+            {
+                "attribute_id": "day_of_exam"
+            }
+        ],
+        "data_available": [
+            {
+                "attribute_id": "available"
+            }
+        ],
+        "keyword_uncontrolled": [],
+        "classification_uncontrolled": []
+    },
+    "upload": {
+        "contract": [
+            {
+                "attribute_id": "contract_editor"
+            }
+        ],
+        "file": [
+            {
+                "mimetype": "zip",
+                "url": "https://www.tambora.org/index.php/grouping/collection/freidokcsvfile?collection_id=591&token=70af3f554c03630e413e39e6bbfc52b3",
+                "filename": "collection-591.zip",
+                "label": "collection-591.zip"
+            }
+        ],
+        "license": [
+            {
+                "attribute_id": "not published"
+            }
+        ]
+    }
+}

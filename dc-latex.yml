@@ -1,0 +1,26 @@
+version: '2'
+services:
+
+  cre-glue:
+    image: tamboraorg/creglue:2020.0
+    container_name: glue
+    volumes:
+     - /var/run/docker.sock:/tmp/docker.sock:ro
+     - ./secrets:/cre/secrets
+
+  cre-python:
+   image: tamboraorg/crecoding:2020.0
+   container_name: latex
+   volumes:
+      - "./volumes/scripts:/cre/scripts"
+      - "./volumes/data:/cre/data"
+   volumes_from:
+    - cre-glue
+ 
+# sudo  docker system prune -f
+# /etc/init.d/apache2 stop
+# sudo /home/kmicha/anaconda3/bin/docker-compose --file dc-latex.yml up -d
+# sudo  docker-compose --file dc-latex.yml up -d
+# sudo docker exec latex /cre/scripts/run.sh
+# sudo chmod 777 -R ./volumes/data
+

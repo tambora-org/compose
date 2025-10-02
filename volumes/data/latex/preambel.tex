@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%PREAMBEL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+   fontsize = 10pt,
+   twoside = false,
+]{scrreprt}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{lmodern}
+\usepackage{catchfilebetweentags}
+
+\usepackage{color}
+\definecolor{timing}{rgb}{0.0, 0.4, 0.0}
+\definecolor{locating}{rgb}{0.5, 0.0, 0.0}
+\definecolor{coding}{rgb}{0.0, 0.25, 0.5}
+
+
+\usepackage{geometry}
+\geometry{
+%   showframe,
+   papersize={210mm,297mm},
+   includeheadfoot,
+   top = 20mm,
+   left = \dimexpr28mm+2mm\relax,
+   right = 20mm,
+   lines = 55,
+   headsep = \dimexpr10mm-\baselineskip,
+   footskip = \dimexpr2\baselineskip+3mm\relax,
+}
+
+\setlength{\footheight}{0.65cm}
+
+\usepackage{scrlayer-scrpage}
+
+\usepackage{longtable}
+\usepackage{float}
+\restylefloat{table}
+
+\usepackage[hidelinks, pdftex,
+            pdfauthor={\ExecuteMetaData[variables.tex]{authorsshort}},
+            pdftitle={\ExecuteMetaData[variables.tex]{title}},
+            pdfsubject={\ExecuteMetaData[variables.tex]{volume}},
+            pdfkeywords={Historical Climatology, Data},
+            pdfproducer={\ExecuteMetaData[variables.tex]{eds}},
+            pdfcreator={tambora.org}]{hyperref}
+\usepackage{caption}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+ 
+\clearpairofpagestyles
+ 
+\setkomafont{pageheadfoot}{\sffamily\footnotesize}
+\setkomafont{pagehead}{\bfseries}
+\setkomafont{pagination}{}
+
+\KOMAoptions{
+   headsepline = true,
+   footsepline = true,
+   plainfootsepline = true,
+}
+
+\renewcommand{\familydefault}{\sfdefault}

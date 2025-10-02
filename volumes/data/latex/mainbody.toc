@@ -1,0 +1,5 @@
+\contentsline {chapter}{The tambora.org data series edition}{1}{chapter*.2}%
+\contentsline {chapter}{\ExecuteMetaData [variables.tex]{title}}{6}{chapter*.7}%
+\contentsline {chapter}{Data set profile}{11}{chapter*.11}%
+\contentsline {chapter}{Data}{12}{chapter*.13}%
+\contentsline {section}{2000-2049}{12}{section*.14}%
